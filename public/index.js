@@ -81,10 +81,10 @@ function initBotConversation() {
         location = tokenPayload.location;
     } else {
         // set default location if desired
-        /*location = {
-            lat: 44.86448450671394,
-            long: -93.32597021107624
-        }*/
+        location = {
+            lat: 26.8595464,
+            long: 80.9594193
+        }
     }
     var botConnection = window.WebChat.createDirectLine({
         token: tokenPayload.connectorToken,
@@ -115,16 +115,14 @@ function initBotConversation() {
                             jsonWebToken: jsonWebToken,
 
                             // Use the following activity to proactively invoke a bot scenario
-                            /*
+                            
                             triggeredScenario: {
-                                trigger: "{scenario_id}",
+                                trigger: "auth",
                                 args: {
-                                    location: location,
-                                    myVar1: "{custom_arg_1}",
-                                    myVar2: "{custom_arg_2}"
+                                    location: location
                                 }
                             }
-                            */
+                            
                         }
                     }
                 }
