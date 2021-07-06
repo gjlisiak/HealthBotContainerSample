@@ -1,7 +1,7 @@
 const defaultLocale = 'en-US';
+const params = new URLSearchParams(location.search);
 
-function requestChatBot(loc) {
-    const params = new URLSearchParams(location.search);
+function requestChatBot(loc) {   
     const oReq = new XMLHttpRequest();
     oReq.addEventListener("load", initBotConversation);
     var path = "/chatBot?locale=" + extractLocale(params.get('locale'));
@@ -120,7 +120,8 @@ function initBotConversation() {
                             triggeredScenario: {
                                 trigger: "auth",
                                 args: {
-                                    location: location
+                                    location: location,
+				    debug: params.has('debug')
                                 }
                             }
                             
