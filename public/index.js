@@ -196,4 +196,14 @@ function disablePastButtonsAndInputs() {
 
 		});
 
+    // handling select object
+    Array.from(ul.getElementsByTagName('select'))
+        .filter(function (input) { return !input.hasAttribute("disabled") })
+        .forEach(function (input) {
+            // console.log('disabling', select);
+            input.setAttribute("disabled", true);
+            input.classList.add("past");
+
+        });
+
 }
